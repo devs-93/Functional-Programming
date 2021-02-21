@@ -83,15 +83,12 @@ object Options extends App {
   val connection = host.flatMap(h => port.flatMap(p => Connection.apply(h, p)))
 
 
-
   /*
   if(c!=null)
      return c.connect()
   return null
   */
   val connectionStatus = connection.map(c => c.connect)
-
-
 
 
   /*
@@ -103,14 +100,25 @@ object Options extends App {
   println(connectionStatus)
 
 
-
-
-
-
   /*
   if connectionStatus != null
      println(connectionStatus)
   */
   connectionStatus.foreach(println)
+
+
+  /*
+  shorter version to do the same connection code (chained call)
+  */
+  println("chained call ")
+  println()
+  config.get("host")
+    .flatMap(h => config.get("port")
+      .flatMap(p => Connection(h, p))
+      .map(c => c.connect)).
+    foreach(println)
+
+
+
 
 }
