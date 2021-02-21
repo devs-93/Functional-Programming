@@ -100,11 +100,13 @@ object Options extends App {
   println(connectionStatus)
 
 
+
   /*
   if connectionStatus != null
      println(connectionStatus)
   */
   connectionStatus.foreach(println)
+
 
 
   /*
@@ -117,6 +119,7 @@ object Options extends App {
       .flatMap(p => Connection(h, p))
       .map(c => c.connect)).
     foreach(println)
+
 
 
   //for-comprehensions
