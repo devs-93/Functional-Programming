@@ -119,6 +119,14 @@ object Options extends App {
     foreach(println)
 
 
+  //for-comprehensions
+  val forConnectionStatus = for {
+    host <- config.get("host")
+    port <- config.get("port")
+    connectObj <- Connection.apply(host, port)
+  } yield connectObj.connect
+
+  forConnectionStatus.foreach(println)
 
 
 }
