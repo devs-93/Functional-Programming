@@ -73,8 +73,38 @@ object PatternMatching extends App {
   val isEvenNormal = x % 2 == 0
 
   /*
-
+  Exercise
+  (1). simple function uses PM
+  (2). take expression as input and return human readable output
   */
+  trait Expression
 
+  case class Number(n: Int) extends Expression
+
+  case class Sum(e1: Expression, e2: Expression) extends Expression
+
+  case class Prod(e1: Expression, e2: Expression) extends Expression
+
+
+  def show(e: Expression): String = {
+    e match {
+      case Number(n) => s"$n"
+      case Sum(e1, e2) => show(e1) + " + " + show(e2)
+      case Prod(e1, e2) => {
+        def maybeShowParenthesis(expression: Expression) = expression match {
+          case Prod(_, _) => show(expression)
+          case Number(_) => show(expression)
+          case _ => "(" + show(expression) + ")"
+        }
+
+        maybeShowParenthesis(e1) + " * " + maybeShowParenthesis(e2)
+      }
+    }
+  }
+
+  println(show(Sum(Number(2), Number(3))))
+  println(show(Sum(Sum(Number(2), Number(3)), Number(10))))
+  println(show(Prod(Sum(Number(2), Number(3)), Number(10))))
+  println(show(Sum(Prod(Number(100), Number(200)), Number(200))))
 
 }
