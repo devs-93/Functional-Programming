@@ -1,4 +1,4 @@
-package lecture.part1oops
+package lecture.oops
 
 object AbstractDataTypes extends App {
 

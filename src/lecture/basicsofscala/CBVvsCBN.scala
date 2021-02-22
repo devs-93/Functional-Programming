@@ -1,4 +1,4 @@
-package lecture.part1basics
+package lecture.basicsofscala
 
 object CBVvsCBN extends App {
   def calledByValue(x: Long): Unit = {

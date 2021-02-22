@@ -1,4 +1,4 @@
-package lecture.part1oops
+package lecture.oops
 
 object OOBasis2 extends App {
   val author = new Writer("Charles", "Shukla", 1993)

@@ -1,4 +1,4 @@
-package lecture.part1basics
+package lecture.basicsofscala
 
 object Practice extends App {
 

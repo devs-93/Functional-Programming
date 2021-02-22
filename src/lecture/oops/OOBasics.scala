@@ -1,4 +1,4 @@
-package lecture.part1oops
+package lecture.oops
 
 //Constructor
 class Person(val name: String, val age: Int) {

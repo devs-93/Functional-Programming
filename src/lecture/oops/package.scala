@@ -1,6 +1,6 @@
 package lecture
 
-package object part1oops {
+package object oops {
 
 
   def sayNoToLaziness(): Unit = println("never give up attitude leads you success!!")

@@ -1,4 +1,4 @@
-package lecture.part1oops
+package lecture.oops
 
 object MethodNotations extends App {
 

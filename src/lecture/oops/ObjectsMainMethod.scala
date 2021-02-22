@@ -1,6 +1,6 @@
-package lecture.part1oops
+package lecture.oops
 
-object Objects extends App {
+object ObjectsMainMethod {
 
   // SCALA DOES NOT HAVE CLASS LEVEL FUNCTIONALITY "(static)"
   //cant receive parm
@@ -25,19 +25,23 @@ object Objects extends App {
 
   //COMPANIONS
 
-  println(Person.EYES)
-  println(Person.canFly("'Leo'"))
 
-  //Scala object == SINGLETON INSTANCE == object is SINGLETON INSTANCE
-  val mary = new Person("Mary")
-  val john = new Person("John")
-  println(mary == john)
+  //scala Application = Scala object with
+  //def main(args: Array[String])
+  def main(args: Array[String]): Unit = {
+    println(Person.EYES)
+    println(Person.canFly("'Leo'"))
+
+    //Scala object == SINGLETON INSTANCE == object is SINGLETON INSTANCE
+    val mary = new Person("Mary")
+    val john = new Person("John")
+    println(mary == john)
 
 
-  val bobbie1 = Person.apply(mary, john)
-  val bobbie2 = Person(mary, john)
+    val bobbie1 = Person.apply(mary, john)
+    val bobbie2 = Person(mary, john)
 
+  }
 
-  //scala Application
 
 }
